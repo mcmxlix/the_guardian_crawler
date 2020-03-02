@@ -47,12 +47,14 @@ def pages_parser(pages_to_scrape, crawler_df, scraped):
 def init_crawler():
     scraped = []
     pages_to_scrape = home_page("https://www.theguardian.com")
-    cols = ["title", "link", "topic", "related_topics", "authors", "datetime", "descriptif", "text", "clean_text"]
+    cols = ["title", "link", "topic", "related_topics", "authors", "datetime", "description", "text", "clean_text"]
     crawler_df = pd.DataFrame(columns=cols)
     return pages_parser(pages_to_scrape, crawler_df, scraped)
 
 
 def lunch_crawler():
     print("*** START CRAWLING ***")
-    init_crawler()
+    theguardian_df = init_crawler()
+    print("*** INSERT DATA INTO MONGODB ***")
+    insert_into_mongodb(theguardian_df)
 

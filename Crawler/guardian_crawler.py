@@ -1,7 +1,7 @@
 import string
 import pandas as pd
-from theguardian_crawler.scrape_page_infos import home_page, scrape_page
-from theguardian_crawler.mongodb_connection import insert_into_mongodb
+from Crawler.scrape_page_infos import home_page, scrape_page
+from Crawler.mongodb_connection import insert_into_mongodb
 from nltk.corpus import stopwords
 import spacy
 

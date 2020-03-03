@@ -2,6 +2,7 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
+
 def scrape_page_title(soup):
     title = soup.find('h1', class_='content__headline').get_text()
     title = re.sub('\n', '', title)
@@ -73,3 +74,4 @@ def scrape_page(link):
     descriptif = scrape_page_descriptif(soup)
     text = scrape_page_text(soup)
     return title, link, topic, related_topics_links, authors, datetime, descriptif, text
+

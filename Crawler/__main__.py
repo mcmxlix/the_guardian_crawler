@@ -1,4 +1,4 @@
-from theguardian_crawler.guardian_crawler import lunch_crawler
+from Crawler.guardian_crawler import lunch_crawler
 
 
 if __name__ == '__main__':

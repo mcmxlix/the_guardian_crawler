@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="icon" href="http://obj-cache.cloud.ruanbekker.com/favicon.ico">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Bookmarks Search</title>
+
+</head>
+<body>
+
+<div class="container">
+    <div style="background:transparent !important" class="jumbotron">
+        <div style="font-family: serif; background-color:#F2F3F4;">
+            <p>
+            <center>
+                 <font style="color:black;font-size:300%;"><b>The Guardian articles search engine</b></font>
+            </center>
+            </p>
+        </div>
+    </div>
+
+    <form action="/search" method="post">
+        <div class="input-group">
+            <input type="text" class="form-control input-lg" name="input" placeholder="Search" autofocus>
+            <div class="input-group-btn">
+                <button class="btn btn-primary btn-lg" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+    <br>
+
+    <center>
+      <h3>Results of your search</h3>
+    </center>
+    <br>
+
+    {% for hit in res %}
+    <font style="color:#FF4040;font-size:140%;"><b>{{ hit[2] }} / </b></font>
+    <a style="color:#003CA4;font-size:140%;" href="{{ hit[1] }}">{{ hit[0] }}</a><br>
+    <p style="color:black;font-size:120%;"> {{ hit[5] }} </p>
+    <font style="color:grey;font-size:80%;">Written by {{ hit[3] }}</font><br>
+    <font style="color:grey;font-size:80%;">{{ hit[4] }} </font><br><br>
+    {% endfor %}
+
+</div>
+</div>
+</body>
+</html>

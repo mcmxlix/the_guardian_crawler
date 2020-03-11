@@ -1,0 +1,3 @@
+url_connection: "mongodb+srv://outman:outman@ol-cluster-rpvwa.mongodb.net/test?retryWrites=true&w=majority"
+database_name: "all"
+collection_name: "guardian"

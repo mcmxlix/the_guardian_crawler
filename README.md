@@ -18,8 +18,8 @@ Before running the crawler, make sure to connect your MongoDB Atlas with this py
 
 To use the crawler, simply run:
 * ```git clone https://github.com/mcmxlix/the_guardian_crawler.git```
-* ```cd the_guardian_crawler/Crawler```
 * ```pip install -r requirements.txt```
+* ```cd the_guardian_crawler/Crawler```
 * ```python __main__.py```
 
 ### *How does the crawler work ?*

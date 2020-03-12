@@ -11,7 +11,11 @@ The structured information scraped from the articles are stored in the hosted Mo
 Before submmiting data to MongoDB, we are going to clean up the scraped text to use it later in the search engine, using the libraries  [`spaCy`](https://spacy.io/) and [`NLTK`](https://www.nltk.org/).
 
 ### *Run the crawler*
-To use, simply run:
+Before running the crawler, make sure to connect your MongoDB Atlas with this python application:
+* To learn how to generate a URI connection strings please visit this [`link`](https://docs.atlas.mongodb.com/driver-connection/)
+* Insert this key in the 'parameters.yaml' file in the 'url_connection' variable
+
+To use the crawler, simply run:
 * ```git clone https://github.com/mcmxlix/the_guardian_crawler.git```
 * ```cd the_guardian_crawler/Crawler```
 * ```pip install -r requirements.txt```

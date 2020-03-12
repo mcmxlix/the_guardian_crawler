@@ -14,6 +14,7 @@ Before submmiting data to MongoDB, we are going to clean up the scraped text to 
 Before running the crawler, make sure to connect your MongoDB Atlas with this python application:
 * To learn how to generate a URI connection strings please visit this [`link`](https://docs.atlas.mongodb.com/driver-connection/)
 * Insert this key in the 'parameters.yaml' file in the 'url_connection' variable
+* [`Create a database and a collection`](https://docs.atlas.mongodb.com/data-explorer/databases-collections/) and indicate their names in the 'parameters.yaml' file
 
 To use the crawler, simply run:
 * ```git clone https://github.com/mcmxlix/the_guardian_crawler.git```
@@ -38,7 +39,7 @@ TF = (Total occurance of the word in the document)/(Total words in the document)
 IDF = log⁡((Total Documents)/(Total number of documents the word is present))
 ```
 ```
-TF-IDF=TF×IDF
+TF-IDF = TF×IDF
 ```
 
 ### *Run the search engine*

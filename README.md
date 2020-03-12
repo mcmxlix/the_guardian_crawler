@@ -44,7 +44,7 @@ TF-IDF = TF×IDF
 
 ### *Run the search engine*
 the following command lines are the continuation of the previous commands:
-* ```cd ../theguardian_search```
+* ```cd ../Search_engine```
 * ```python app.py```
 
 ### *Search engine screenshots*

@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
-from theguardian_crawler.mongodb_connection import connect_to_mongodb
+from Crawler.mongodb_connection import mongodb_db_collection, connect_to_mongodb, read_yaml
 
 
 def train_tfidf_vectorizer(data_frame):
@@ -46,7 +46,9 @@ def articles_search(key_words):
     """ This function returns the articles that best match the keywords  """
     results = []
     # Establish a connection to MongoDB Atlas
-    collection = connect_to_mongodb()
+    url_connection, database_name, collection_name = read_yaml()
+    client = connect_to_mongodb(url_connection)
+    collection = mongodb_db_collection(client, database_name, collection_name)
     # Get clean text of articles from MongoDB Atlas to compare it to our keywords
     coll_clean_text = collection.find({}, {"_id": 1, "clean_text": 1})
 
